@@ -34,6 +34,7 @@
 #include "soc/nxp/imx6sdlrm.h"
 #include "soc/broadcom/2835.h"
 #include "soc/broadcom/2836.h"
+#include "soc/broadcom/2711.h"
 #include "soc/amlogic/s805.h"
 #include "soc/amlogic/s905.h"
 #include "soc/samsung/exynos5422.h"
@@ -54,6 +55,7 @@
 #include "platform/raspberrypi/raspberrypizero.h"
 #include "platform/raspberrypi/raspberrypi2.h"
 #include "platform/raspberrypi/raspberrypi3.h"
+#include "platform/raspberrypi/raspberrypi4.h"
 #include "platform/hardkernel/odroidc1.h"
 #include "platform/hardkernel/odroidc2.h"
 #include "platform/hardkernel/odroidxu4.h"
@@ -230,6 +232,7 @@ static void wiringXInit(void) {
 	nxpIMX6SDLRMInit();
 	broadcom2835Init();
 	broadcom2836Init();
+	broadcom2711Init();
 	amlogicS805Init();
 	amlogicS905Init();
 	exynos5422Init();
@@ -251,6 +254,7 @@ static void wiringXInit(void) {
 	raspberrypizeroInit();
 	raspberrypi2Init();
 	raspberrypi3Init();
+	raspberrypi4Init();
 	odroidc1Init();
 	odroidc2Init();
 	odroidxu4Init();
