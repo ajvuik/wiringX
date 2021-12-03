@@ -45,6 +45,7 @@
 #include "platform/xunlong/orangepipc+.h"
 #include "platform/xunlong/orangepipc2.h"
 #include "platform/xunlong/orangepione.h"
+#include "platform/xunlong/orangepizero.h"
 #include "platform/solidrun/hummingboard_gate_edge_sdl.h"
 #include "platform/solidrun/hummingboard_gate_edge_dq.h"
 #include "platform/solidrun/hummingboard_base_pro_sdl.h"
@@ -244,6 +245,7 @@ static void wiringXInit(void) {
 	orangepipcpInit();
 	orangepipc2Init();
 	orangepioneInit();
+	orangepizeroInit();
 	hummingboardBaseProSDLInit();
 	hummingboardBaseProDQInit();
 	hummingboardGateEdgeSDLInit();
