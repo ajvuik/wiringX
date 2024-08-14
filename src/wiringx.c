@@ -38,6 +38,9 @@
 #include "soc/amlogic/s805.h"
 #include "soc/amlogic/s905.h"
 #include "soc/samsung/exynos5422.h"
+#include "soc/rockchip/rk3399.h"
+#include "soc/rockchip/rk3588.h"
+#include "soc/sophgo/cv180x.h"
 
 #include "platform/linksprite/pcduino1.h"
 #include "platform/lemaker/bananapi1.h"
@@ -60,6 +63,9 @@
 #include "platform/hardkernel/odroidc1.h"
 #include "platform/hardkernel/odroidc2.h"
 #include "platform/hardkernel/odroidxu4.h"
+#include "platform/radxa/rock4.h"
+#include "platform/radxa/rock5b.h"
+#include "platform/milkv/duo.h"
 
 void wiringXDefaultLog(int prio, char *file, int line, const char *format_str, ...);
 
@@ -96,7 +102,7 @@ static struct spi_t spi[2] = {
 			++(result)->tv_sec; \
 			(result)->tv_usec -= 1000000L; \
 		} \
-	} while (0)
+	} while(0)
 
 #define timersub(a, b, result) \
 	do { \
@@ -106,7 +112,7 @@ static struct spi_t spi[2] = {
 			--(result)->tv_sec; \
 			(result)->tv_usec += 1000000L; \
 		} \
-	} while (0)
+	} while(0)
 #endif
 
 /* Both the delayMicroseconds and the delayMicrosecondsHard
@@ -237,6 +243,9 @@ static void wiringXInit(void) {
 	amlogicS805Init();
 	amlogicS905Init();
 	exynos5422Init();
+	rk3399Init();
+	rk3588Init();
+	cv180xInit();
 
 	/* Init all platforms */
 	pcduino1Init();
@@ -260,6 +269,9 @@ static void wiringXInit(void) {
 	odroidc1Init();
 	odroidc2Init();
 	odroidxu4Init();
+	rock4Init();
+	rock5bInit();
+	milkv_duoInit();
 }
 
 EXPORT int wiringXSetup(char *name, void (*func)(int, char *, int, const char *, ...)) {
